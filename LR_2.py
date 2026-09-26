@@ -65,7 +65,6 @@ beyts = (bits + 7) // 8  # просте ділення на 8 з округле�
 print("2.3. Кількість бітів:", bits)
 print("     Кількість байтів:", beyts)
 
-
 # Завдання Номер 3
 # 3.1. Генерація ключів
 # Беремо достатньо великі p і q, щоб модуль n був великим (40+ цифр)
@@ -78,8 +77,9 @@ pu = (p - 1) * (q - 1)
 e = 65537
 d = pow(e, -1, pu)  # Секретна експонента: d = e^-1 mod pu
 
-print("3.1. КЛЮЧІ ЗГЕНЕРОВАНО")
+print("3.1 Ключі згенеровано")
 print(f"n = {n}\ne = {e}\nd = {d}\n")
+
 
 # 3.2. Аналіз параметрів ключа (n, e, d)
 
@@ -95,7 +95,8 @@ def analyze(name, val):
     print(f"   Розрядність у двійковій (біти): {bin_bits}")
     print(f"   Кількість цифр у шістнадцятковій: {hex_digits}\n")
 
-print("3.2. АНАЛІЗ ПАРАМЕТРІВ")
+
+print("3.2 Аналіз параметрів")
 analyze("n (модуль)", n)
 analyze("e (відкрита експонента)", e)
 analyze("d (секретна експонента)", d)
@@ -185,7 +186,7 @@ vyraz1 = math.sqrt(math.sin(x ** 2) + 16 * y * x)
 vyraz2 = 16 * y * x
 vyraz3 = math.exp(x + y)
 vyraz4 = 1 / math.cos(y) + x
-full_vyraz= vyraz1 + vyraz2 - vyraz3 - vyraz4
+full_vyraz = vyraz1 + vyraz2 - vyraz3 - vyraz4
 
 # Вивід інформації
 print("             Звіт")
@@ -198,7 +199,6 @@ print(f"Отриманий результат обчислення: {full_vyraz:
 
 from rich.console import Console
 from rich.table import Table
-
 
 # 1. Вхідні дані для 10 варіанту
 
@@ -232,7 +232,6 @@ entropy_strong_pass = 95
 comb_weak = 2 ** entropy_weak_pass
 comb_medium = 2 ** entropy_medium_pass
 comb_strong = 2 ** entropy_strong_pass
-
 
 # 2. Розрахунок часу підбору
 
@@ -281,7 +280,6 @@ years_pbkdf2_strong = comb_strong / (pbkdf2_cluster_speed * SEC_IN_YEAR)
 years_bcrypt_strong = comb_strong / (bcrypt_cluster_speed * SEC_IN_YEAR)
 years_argon2_strong = comb_strong / (argon2_cluster_speed * SEC_IN_YEAR)
 
-
 # 3. Розрахунок витрат на електроенергію
 
 
@@ -291,9 +289,11 @@ USD_TO_UAH = 45.0
 
 electricity_cost_per_kwh_usd = ELECTRICITY_COST_PER_KWH_UAH / USD_TO_UAH
 
+
 def calculate_electricity_cost(hours):
     energy_kwh = hours * POWER_CONSUMPTION_KW * GPU_COUNT
     return energy_kwh * electricity_cost_per_kwh_usd
+
 
 cost_md5_weak = calculate_electricity_cost(hours_md5_weak)
 cost_sha1_weak = calculate_electricity_cost(hours_sha1_weak)
@@ -315,7 +315,6 @@ cost_sha256_strong = calculate_electricity_cost(hours_sha256_strong)
 cost_pbkdf2_strong = calculate_electricity_cost(hours_pbkdf2_strong)
 cost_bcrypt_strong = calculate_electricity_cost(hours_bcrypt_strong)
 cost_argon2_strong = calculate_electricity_cost(hours_argon2_strong)
-
 
 # 4. Вивід таблиць у консоль
 
