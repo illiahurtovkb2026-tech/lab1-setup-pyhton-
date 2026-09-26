@@ -100,9 +100,9 @@ analyze("n (модуль)", n)
 analyze("e (відкрита експонента)", e)
 analyze("d (секретна експонента)", d)
 
-# 3.3. Шифрування
+# 3.3 Шифрування
 
-print("3.3. ШИФРУВАННЯ")
+print("3.3 Шифрування")
 surname = "Гуртов"
 
 # 1. Перетворюємо текст у байти, а байти у число m
@@ -118,7 +118,7 @@ print(f"Зашифроване число c: {c}\n")
 
 # 3.4. Розшифрування
 
-print("3.4. РОЗШИФРУВАННЯ")
+print("3.4 Розшифрування")
 # 1. Розшифрування за формулою: m' = (c ^ d) mod n
 m_decrypted = pow(c, d, n)
 print(f"Розшифроване число m': {m_decrypted}")
@@ -131,7 +131,7 @@ decrypted_surname = decrypted_bytes.decode("utf-8")
 print(f"Відновлений текст: {decrypted_surname}")
 from pydoc import plaintext
 
-# Завдання Номер 4  (Шифрування та розшифрування даних операцією XOR)
+# Завдання Номер 4 (Шифрування та розшифрування даних операцією XOR)
 # 4.1 Підготовка даних
 M = "Гуртов"
 print("M = " + M)
@@ -337,12 +337,37 @@ table_hours.add_column("Слабкий (60 біт), год.", style="bold yellow
 table_hours.add_column("Середній (73 біти), год.", style="bold yellow", justify="center", overflow="fold")
 table_hours.add_column("Сильний (95 біт), год.", style="bold yellow", justify="center", overflow="fold")
 
-table_hours.add_row("MD5", f"{int(md5_cluster_speed * SEC_IN_HOUR):,}", f"{int(hours_md5_weak):,}", f"{int(hours_md5_medium):,}", f"{int(hours_md5_strong):,}")
-table_hours.add_row("SHA-1", f"{int(sha1_cluster_speed * SEC_IN_HOUR):,}", f"{int(hours_sha1_weak):,}", f"{int(hours_sha1_medium):,}", f"{int(hours_sha1_strong):,}")
-table_hours.add_row("SHA-256", f"{int(sha256_cluster_speed * SEC_IN_HOUR):,}", f"{int(hours_sha256_weak):,}", f"{int(hours_sha256_medium):,}", f"{int(hours_sha256_strong):,}")
-table_hours.add_row("PBKDF2-WPA2", f"{int(pbkdf2_cluster_speed * SEC_IN_HOUR):,}", f"{int(hours_pbkdf2_weak):,}", f"{int(hours_pbkdf2_medium):,}", f"{int(hours_pbkdf2_strong):,}")
-table_hours.add_row("bcrypt", f"{int(bcrypt_cluster_speed * SEC_IN_HOUR):,}", f"{int(hours_bcrypt_weak):,}", f"{int(hours_bcrypt_medium):,}", f"{int(hours_bcrypt_strong):,}")
-table_hours.add_row("Argon2", f"{int(argon2_cluster_speed * SEC_IN_HOUR):,}", f"{int(hours_argon2_weak):,}", f"{int(hours_argon2_medium):,}", f"{int(hours_argon2_strong):,}")
+table_hours.add_row("MD5",
+                    f"{int(md5_cluster_speed * SEC_IN_HOUR):,}",
+                    f"{int(hours_md5_weak):,}",
+                    f"{int(hours_md5_medium):,}",
+                    f"{int(hours_md5_strong):,}")
+
+table_hours.add_row("SHA-1",
+                    f"{int(sha1_cluster_speed * SEC_IN_HOUR):,}",
+                    f"{int(hours_sha1_weak):,}",
+                    f"{int(hours_sha1_medium):,}",
+                    f"{int(hours_sha1_strong):,}")
+table_hours.add_row("SHA-256",
+                    f"{int(sha256_cluster_speed * SEC_IN_HOUR):,}",
+                    f"{int(hours_sha256_weak):,}",
+                    f"{int(hours_sha256_medium):,}",
+                    f"{int(hours_sha256_strong):,}")
+table_hours.add_row("PBKDF2-WPA2",
+                    f"{int(pbkdf2_cluster_speed * SEC_IN_HOUR):,}",
+                    f"{int(hours_pbkdf2_weak):,}",
+                    f"{int(hours_pbkdf2_medium):,}",
+                    f"{int(hours_pbkdf2_strong):,}")
+table_hours.add_row("bcrypt",
+                    f"{int(bcrypt_cluster_speed * SEC_IN_HOUR):,}",
+                    f"{int(hours_bcrypt_weak):,}",
+                    f"{int(hours_bcrypt_medium):,}",
+                    f"{int(hours_bcrypt_strong):,}")
+table_hours.add_row("Argon2",
+                    f"{int(argon2_cluster_speed * SEC_IN_HOUR):,}",
+                    f"{int(hours_argon2_weak):,}",
+                    f"{int(hours_argon2_medium):,}",
+                    f"{int(hours_argon2_strong):,}")
 
 console.print(table_hours)
 console.print()
@@ -361,12 +386,36 @@ table_years.add_column("Слабкий (60 біт), років", style="bold yel
 table_years.add_column("Середній (73 біти), років", style="bold yellow", justify="center", overflow="fold")
 table_years.add_column("Сильний (95 біт), років", style="bold yellow", justify="center", overflow="fold")
 
-table_years.add_row("MD5", f"{int(md5_cluster_speed * SEC_IN_YEAR):,}", f"{years_md5_weak:,.4f}", f"{int(years_md5_medium):,}", f"{int(years_md5_strong):,}")
-table_years.add_row("SHA-1", f"{int(sha1_cluster_speed * SEC_IN_YEAR):,}", f"{years_sha1_weak:,.4f}", f"{int(years_sha1_medium):,}", f"{int(years_sha1_strong):,}")
-table_years.add_row("SHA-256", f"{int(sha256_cluster_speed * SEC_IN_YEAR):,}", f"{years_sha256_weak:,.4f}", f"{int(years_sha256_medium):,}", f"{int(years_sha256_strong):,}")
-table_years.add_row("PBKDF2-WPA2", f"{int(pbkdf2_cluster_speed * SEC_IN_YEAR):,}", f"{int(years_pbkdf2_weak):,}", f"{int(years_pbkdf2_medium):,}", f"{int(years_pbkdf2_strong):,}")
-table_years.add_row("bcrypt", f"{int(bcrypt_cluster_speed * SEC_IN_YEAR):,}", f"{int(years_bcrypt_weak):,}", f"{int(years_bcrypt_medium):,}", f"{int(years_bcrypt_strong):,}")
-table_years.add_row("Argon2", f"{int(argon2_cluster_speed * SEC_IN_YEAR):,}", f"{int(years_argon2_weak):,}", f"{int(years_argon2_medium):,}", f"{int(years_argon2_strong):,}")
+table_years.add_row("MD5",
+                    f"{int(md5_cluster_speed * SEC_IN_YEAR):,}",
+                    f"{years_md5_weak:,.4f}",
+                    f"{int(years_md5_medium):,}",
+                    f"{int(years_md5_strong):,}")
+table_years.add_row("SHA-1",
+                    f"{int(sha1_cluster_speed * SEC_IN_YEAR):,}",
+                    f"{years_sha1_weak:,.4f}",
+                    f"{int(years_sha1_medium):,}",
+                    f"{int(years_sha1_strong):,}")
+table_years.add_row("SHA-256",
+                    f"{int(sha256_cluster_speed * SEC_IN_YEAR):,}",
+                    f"{years_sha256_weak:,.4f}",
+                    f"{int(years_sha256_medium):,}",
+                    f"{int(years_sha256_strong):,}")
+table_years.add_row("PBKDF2-WPA2",
+                    f"{int(pbkdf2_cluster_speed * SEC_IN_YEAR):,}",
+                    f"{int(years_pbkdf2_weak):,}",
+                    f"{int(years_pbkdf2_medium):,}",
+                    f"{int(years_pbkdf2_strong):,}")
+table_years.add_row("bcrypt",
+                    f"{int(bcrypt_cluster_speed * SEC_IN_YEAR):,}",
+                    f"{int(years_bcrypt_weak):,}",
+                    f"{int(years_bcrypt_medium):,}",
+                    f"{int(years_bcrypt_strong):,}")
+table_years.add_row("Argon2",
+                    f"{int(argon2_cluster_speed * SEC_IN_YEAR):,}",
+                    f"{int(years_argon2_weak):,}",
+                    f"{int(years_argon2_medium):,}",
+                    f"{int(years_argon2_strong):,}")
 
 console.print(table_years)
 console.print()
@@ -384,11 +433,29 @@ table_cost.add_column("Слабкий (60 біт), USD", style="bold yellow", ju
 table_cost.add_column("Середній (73 біти), USD", style="bold yellow", justify="center", overflow="fold")
 table_cost.add_column("Сильний (95 біт), USD", style="bold yellow", justify="center", overflow="fold")
 
-table_cost.add_row("MD5", f"{int(cost_md5_weak):,}", f"{int(cost_md5_medium):,}", f"{int(cost_md5_strong):,}")
-table_cost.add_row("SHA-1", f"{int(cost_sha1_weak):,}", f"{int(cost_sha1_medium):,}", f"{int(cost_sha1_strong):,}")
-table_cost.add_row("SHA-256", f"{int(cost_sha256_weak):,}", f"{int(cost_sha256_medium):,}", f"{int(cost_sha256_strong):,}")
-table_cost.add_row("PBKDF2-WPA2", f"{int(cost_pbkdf2_weak):,}", f"{int(cost_pbkdf2_medium):,}", f"{int(cost_pbkdf2_strong):,}")
-table_cost.add_row("bcrypt", f"{int(cost_bcrypt_weak):,}", f"{int(cost_bcrypt_medium):,}", f"{int(cost_bcrypt_strong):,}")
-table_cost.add_row("Argon2", f"{int(cost_argon2_weak):,}", f"{int(cost_argon2_medium):,}", f"{int(cost_argon2_strong):,}")
+table_cost.add_row("MD5",
+                   f"{int(cost_md5_weak):,}",
+                   f"{int(cost_md5_medium):,}",
+                   f"{int(cost_md5_strong):,}")
+table_cost.add_row("SHA-1",
+                   f"{int(cost_sha1_weak):,}",
+                   f"{int(cost_sha1_medium):,}",
+                   f"{int(cost_sha1_strong):,}")
+table_cost.add_row("SHA-256",
+                   f"{int(cost_sha256_weak):,}",
+                   f"{int(cost_sha256_medium):,}",
+                   f"{int(cost_sha256_strong):,}")
+table_cost.add_row("PBKDF2-WPA2",
+                   f"{int(cost_pbkdf2_weak):,}",
+                   f"{int(cost_pbkdf2_medium):,}",
+                   f"{int(cost_pbkdf2_strong):,}")
+table_cost.add_row("bcrypt",
+                   f"{int(cost_bcrypt_weak):,}",
+                   f"{int(cost_bcrypt_medium):,}",
+                   f"{int(cost_bcrypt_strong):,}")
+table_cost.add_row("Argon2",
+                   f"{int(cost_argon2_weak):,}",
+                   f"{int(cost_argon2_medium):,}",
+                   f"{int(cost_argon2_strong):,}")
 
 console.print(table_cost)
