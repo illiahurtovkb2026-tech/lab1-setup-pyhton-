@@ -62,11 +62,11 @@ print(f"\nLONG RUN TEST")
 print(f"Максимальна довжина серії: {max_run}")
 print(f"Результат: {'ПРОЙДЕНО' if long_run_passed else 'НЕ ПРОЙДЕНО'}\n")
 
-# 4. Перетворення бітового потоку у байти (як на зразку)[cite: 1]
+# 4. Перетворення бітового потоку у байти
 big_random_number = int(bit_stream, base=2)
 seq_bytes = big_random_number.to_bytes(20_000 // 8, byteorder='big')
 
-# 5. Побудова графіка точно за зразком[cite: 1]
+# 5. Побудова графіка
 plt.figure()
 plt.scatter(list(seq_bytes[::2]), list(seq_bytes[1::2]), color='skyblue')
 plt.title("Розподіл випадкових значень на площині")
