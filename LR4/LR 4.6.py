@@ -38,8 +38,7 @@ for _ in range(20_000):
 
 print(f"Згенеровано біт: {len(bit_stream)}")
 
-#3. ПЕРЕВІРКА ТЕСТАМИ (чого не вистачало у вашому коді)
-
+#3. ПЕРЕВІРКА ТЕСТАМИ
 # Monobit Test (перевірка кількості одиниць)
 ones_count = bit_stream.count('1')
 monobit_passed = 9725 < ones_count < 10275
